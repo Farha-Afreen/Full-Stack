@@ -13,6 +13,30 @@ go to terminal where the jenkins.war file is located
 java -jar jenkins.war
 (copy paste the pwd in http://localhost:8080 )
 
+3. Do the following in jenkins for FREE STYLE PROJECT
+New iten --> give any name --> free style project --> OK
+
+4. goto source code management
+-> copy paste the git repo url
+-> change the branch to '*/main'
+-> build steps --> execute shell
+-> inside command box: 
+		javac Main.java
+		java Main
+-> Apply and save
+-> Build Now
+
+5. for PIPELINE
+-> New iten --> give any name --> free style project --> OK
+-> Pipeline definition --> pipeline script from SCM
+					SCM
+					    Git
+-> copy paste the git repo url
+-> change the branch to '*/main'
+-> script path --> Jenkinfile.txt
+-> Apply and save
+-> Build Now
+
 
 jenkins.txt (pipeline file) :
 
