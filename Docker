@@ -1,0 +1,42 @@
+DOCKER
+
+1. Installation:
+sudo snap install docker
+
+2. Create flask app:
+pip install flask
+
+Add these files in a folder:
+
+i) app.py
+
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello():
+    return "Hello from Flask!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=5000)
+
+ii) Dockerfile
+
+FROM python:3.10
+COPY app.py/app.py
+RUN pip install -r requirements.txt
+EXPOSE 5000
+ENV NAME=FlaskApp
+CMD ["python3","/app.py]
+
+iii) requirements.txt:
+
+Flask==2.3.3
+
+3. Build Docker:
+
+sudo chmod 666 /var/run/docker.sock
+docker build -t myapp
+docker run -d -p 5000:5000 myapp
+
+4. Verify
+Go to: http://localhost:5000
