@@ -1,0 +1,22 @@
+SSH
+
+ssh-keygen -t rsa -b 2048
+ssh-copy-id username@ip  (other system's)
+
+ssh username@ip 'ls'
+ssh username@ip 'echo "HIII" '
+
+OR
+
+
+--create a test.sh in remote system
+ssh username@ip 'bash ~/test.sh'
+
+To transfer file from remote to local: (write this command in a script file--> script.sh)
+scp "username@ip":"filename_remote" "filename_local"
+Then run the script file ---> bash script.sh
+
+To send file from local to remote: (write this command in a script file--> script.sh)
+scp "filename_local" "username@ip":"filename_remote"
+Then run the script file ---> bash script.sh
+
