@@ -36,7 +36,7 @@ Werkzeug==2.3.3
 3. Build Docker:
 
 sudo chmod 666 /var/run/docker.sock
-docker build -t myapp
+docker build -t myapp . 
 docker run -d -p 5000:5000 myapp
 
 4. Verify
