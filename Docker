@@ -31,6 +31,7 @@ CMD ["python3","/app.py]
 iii) requirements.txt:
 
 Flask==2.3.3
+Werkzeug==2.3.3
 
 3. Build Docker:
 
