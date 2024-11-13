@@ -1,0 +1,39 @@
+mkdir my-app
+cd my-app
+
+git init
+
+echo "Welcome to My App" > app.txt
+git add app.txt
+git commit -m "Initial commit"
+
+git checkout -b version1
+
+echo "Feature A for version 1" >> app.txt
+git add app.txt
+git commit -m "Add Feature A for version 1"
+
+git checkout main
+
+git checkout -b version2
+
+echo "Feature B for version 2" >> app.txt
+git add app.txt
+git commit -m "Add Feature B for version 2"
+
+git checkout main
+git merge version1
+git merge version2
+
+nano app.txt
+
+________________________
+Welcome to My App
+Feature A for version 1
+Feature B for version 2
+_________________________
+
+git add app.txt
+
+git commit -m "Merge version2 into main, resolved conflicts"
+git log --oneline --graph --all
